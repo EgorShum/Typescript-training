@@ -1,4 +1,5 @@
 const apples: number = 5;
+const apples2 = 5; // type inference
 let speed: string = 'fast';
 let hasName: boolean = true;
 
@@ -23,3 +24,14 @@ let point: { x: number; y: number } = {
   x: 10,
   y: 20
 };
+
+// Function
+const logNumber: (i: number) => void = (i: number) => {
+  console.log(i);
+};
+
+// When to use annotations
+// 1) function that returns the 'any' type
+const json = '{"x": 10, "y": 20}';
+const coordinates = JSON.parse(json); // JSON.parse() can return any data type
+console.log(coordinates); // { x: 10, y: 20};
